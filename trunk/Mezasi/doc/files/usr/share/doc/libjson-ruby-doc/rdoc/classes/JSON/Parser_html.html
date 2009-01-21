@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: Parser.html</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../../../../../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>Parser.html</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>/usr/share/doc/libjson-ruby-doc/rdoc/classes/JSON/Parser.html
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Sun Oct 22 05:29:18 +0900 2006</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;
+&lt;!DOCTYPE html
+</p>
+<pre>
+     PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
+     &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+</pre>
+<p>
+&lt;html xmlns=&quot;<a
+href="http://www.w3.org/1999/xhtml">www.w3.org/1999/xhtml</a>&quot;
+xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt; &lt;head&gt;
+</p>
+<pre>
+  &lt;title&gt;Class: JSON::Parser&lt;/title&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-1&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Script-Type&quot; content=&quot;text/javascript&quot; /&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;../.././rdoc-style.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;
+  &lt;script type=&quot;text/javascript&quot;&gt;
+  // &lt;![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, &quot;Code&quot;, &quot;resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400&quot;)
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( &quot;document.all.&quot; + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+
+    if ( elemStyle.display != &quot;block&quot; ) {
+      elemStyle.display = &quot;block&quot;
+    } else {
+      elemStyle.display = &quot;none&quot;
+    }
+
+    return true;
+  }
+
+  // Make codeblocks hidden by default
+  document.writeln( &quot;&lt;style type=\&quot;text/css\&quot;&gt;div.method-source-code { display: none }&lt;/style&gt;&quot; )
+
+  // ]]&gt;
+  &lt;/script&gt;
+</pre>
+<p>
+&lt;/head&gt; &lt;body&gt;
+</p>
+<pre>
+    &lt;div id=&quot;classHeader&quot;&gt;
+        &lt;table class=&quot;header-table&quot;&gt;
+        &lt;tr class=&quot;top-aligned-row&quot;&gt;
+          &lt;td&gt;&lt;strong&gt;Class&lt;/strong&gt;&lt;/td&gt;
+          &lt;td class=&quot;class-name-in-header&quot;&gt;JSON::Parser&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;top-aligned-row&quot;&gt;
+            &lt;td&gt;&lt;strong&gt;In:&lt;/strong&gt;&lt;/td&gt;
+            &lt;td&gt;
+                &lt;a href=&quot;../../files/lib/json_rb.html&quot;&gt;
+                lib/json.rb
+                &lt;/a&gt;
+        &lt;br /&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+
+        &lt;tr class=&quot;top-aligned-row&quot;&gt;
+            &lt;td&gt;&lt;strong&gt;Parent:&lt;/strong&gt;&lt;/td&gt;
+            &lt;td&gt;
+                StringScanner
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;!-- banner header --&gt;
+
+  &lt;div id=&quot;bodyContent&quot;&gt;
+
+  &lt;div id=&quot;contextContent&quot;&gt;
+    &lt;div id=&quot;diagram&quot;&gt;
+      &lt;map id=&quot;map&quot; name=&quot;map&quot;&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;132,5,239,53&quot;      href=&quot;../StringScanner.html&quot; alt=&quot;StringScanner&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;149,224,221,272&quot;      href=&quot;Parser.html&quot; alt=&quot;Parser&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;608,449,712,497&quot;      href=&quot;Editor/JSONTreeView.html&quot; alt=&quot;JSONTreeView&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;840,449,939,497&quot;      href=&quot;Editor/MainWindow.html&quot; alt=&quot;MainWindow&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;981,331,1085,379&quot;      href=&quot;../Gtk/TreeView.html&quot; alt=&quot;Gtk::TreeView&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;483,449,584,497&quot;      href=&quot;Editor/OptionsMenu.html&quot; alt=&quot;OptionsMenu&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;736,449,816,497&quot;      href=&quot;Editor/EditMenu.html&quot; alt=&quot;EditMenu&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;264,449,357,497&quot;      href=&quot;Editor/PopUpMenu.html&quot; alt=&quot;PopUpMenu&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;381,449,459,497&quot;      href=&quot;Editor/FileMenu.html&quot; alt=&quot;FileMenu&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;1109,331,1208,379&quot;      href=&quot;../Gtk/Window.html&quot; alt=&quot;Gtk::Window&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;699,5,784,53&quot;      href=&quot;../Enumerable.html&quot; alt=&quot;Enumerable&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;705,224,777,272&quot;      href=&quot;Editor/Gtk/TreeIter.html&quot; alt=&quot;TreeIter&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;860,5,932,53&quot;      href=&quot;../Gtk.html&quot; alt=&quot;Gtk&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;53,224,125,272&quot;      href=&quot;State.html&quot; alt=&quot;State&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;43,191,232,283&quot;      href=&quot;../JSON.html&quot; alt=&quot;lib/json.rb&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;253,416,949,508&quot;      href=&quot;Editor.html&quot; alt=&quot;lib/json/editor.rb&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;627,320,729,367&quot;      href=&quot;Editor/MenuExtension.html&quot; alt=&quot;MenuExtension&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;687,191,795,283&quot;      href=&quot;Editor/Gtk.html&quot; alt=&quot;lib/json/editor.rb&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;663,157,805,293&quot;      href=&quot;Editor/Gtk.html&quot; alt=&quot;Gtk&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;243,124,960,519&quot;      href=&quot;Editor.html&quot; alt=&quot;Editor&quot; /&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;16,91,971,529&quot;      href=&quot;../JSON.html&quot; alt=&quot;JSON&quot; /&gt;
+</pre>
+<p>
+&lt;/map&gt; &lt;img src=&quot;../../dot/m_1_0.png&quot;
+usemap=&quot;map&quot; border=&quot;0&quot;
+alt=&quot;dot/m_1_0.png&quot;&gt;
+</p>
+<pre>
+    &lt;/div&gt;
+
+    &lt;div id=&quot;description&quot;&gt;
+      &lt;p&gt;
+</pre>
+<p>
+This class implements the &lt;a
+href=&quot;../JSON.html&quot;&gt;JSON&lt;/a&gt; parser that is used to
+&lt;a href=&quot;Parser.html#M000104&quot;&gt;parse&lt;/a&gt; a &lt;a
+href=&quot;../JSON.html&quot;&gt;JSON&lt;/a&gt; string into a Ruby data
+structure. &lt;/p&gt;
+</p>
+<pre>
+    &lt;/div&gt;
+
+   &lt;/div&gt;
+
+    &lt;div id=&quot;method-list&quot;&gt;
+      &lt;h3 class=&quot;section-bar&quot;&gt;Methods&lt;/h3&gt;
+
+      &lt;div class=&quot;name-list&quot;&gt;
+      &lt;a href=&quot;#M000104&quot;&gt;parse&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+      &lt;a href=&quot;#M000107&quot;&gt;parse_array&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+      &lt;a href=&quot;#M000108&quot;&gt;parse_object&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+      &lt;a href=&quot;#M000105&quot;&gt;parse_string&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+      &lt;a href=&quot;#M000106&quot;&gt;parse_value&lt;/a&gt;&amp;nbsp;&amp;nbsp;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+
+    &lt;!-- if includes --&gt;
+
+    &lt;div id=&quot;section&quot;&gt;
+
+    &lt;div id=&quot;constants-list&quot;&gt;
+      &lt;h3 class=&quot;section-bar&quot;&gt;Constants&lt;/h3&gt;
+
+      &lt;div class=&quot;name-list&quot;&gt;
+        &lt;table summary=&quot;Constants&quot;&gt;
+        &lt;tr class=&quot;top-aligned-row context-row&quot;&gt;
+          &lt;td class=&quot;context-item-name&quot;&gt;STRING&lt;/td&gt;
+          &lt;td&gt;=&lt;/td&gt;
+          &lt;td class=&quot;context-item-value&quot;&gt;/&amp;quot;((?:[^&amp;quot;\\]|\\.)*)&amp;quot;/&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;top-aligned-row context-row&quot;&gt;
+          &lt;td class=&quot;context-item-name&quot;&gt;INTEGER&lt;/td&gt;
+          &lt;td&gt;=&lt;/td&gt;
+          &lt;td class=&quot;context-item-value&quot;&gt;/-?\d+/&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;top-aligned-row context-row&quot;&gt;
+          &lt;td class=&quot;context-item-name&quot;&gt;FLOAT&lt;/td&gt;
+          &lt;td&gt;=&lt;/td&gt;
+          &lt;td class=&quot;context-item-value&quot;&gt;/-?\d+\.(\d*)(?i:e[+-]?\d+)?/&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;top-aligned-row context-row&quot;&gt;
+          &lt;td class=&quot;context-item-name&quot;&gt;OBJECT_OPEN&lt;/td&gt;
+          &lt;td&gt;=&lt;/td&gt;
+          &lt;td class=&quot;context-item-value&quot;&gt;/\{/&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;top-aligned-row context-row&quot;&gt;
+          &lt;td class=&quot;context-item-name&quot;&gt;OBJECT_CLOSE&lt;/td&gt;
+          &lt;td&gt;=&lt;/td&gt;
+          &lt;td class=&quot;context-item-value&quot;&gt;/\}/&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;top-aligned-row context-row&quot;&gt;
+          &lt;td class=&quot;context-item-name&quot;&gt;ARRAY_OPEN&lt;/td&gt;
+          &lt;td&gt;=&lt;/td&gt;
+          &lt;td class=&quot;context-item-value&quot;&gt;/\[/&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;top-aligned-row context-row&quot;&gt;
+          &lt;td class=&quot;context-item-name&quot;&gt;ARRAY_CLOSE&lt;/td&gt;
+          &lt;td&gt;=&lt;/td&gt;
+          &lt;td class=&quot;context-item-value&quot;&gt;/\]/&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;top-aligned-row context-row&quot;&gt;
+          &lt;td class=&quot;context-item-name&quot;&gt;PAIR_DELIMITER&lt;/td&gt;
+          &lt;td&gt;=&lt;/td&gt;
+          &lt;td class=&quot;context-item-value&quot;&gt;/:/&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;top-aligned-row context-row&quot;&gt;
+          &lt;td class=&quot;context-item-name&quot;&gt;COLLECTION_DELIMITER&lt;/td&gt;
+          &lt;td&gt;=&lt;/td&gt;
+          &lt;td class=&quot;context-item-value&quot;&gt;/,/&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;top-aligned-row context-row&quot;&gt;
+          &lt;td class=&quot;context-item-name&quot;&gt;TRUE&lt;/td&gt;
+          &lt;td&gt;=&lt;/td&gt;
+          &lt;td class=&quot;context-item-value&quot;&gt;/true/&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;top-aligned-row context-row&quot;&gt;
+          &lt;td class=&quot;context-item-name&quot;&gt;FALSE&lt;/td&gt;
+          &lt;td&gt;=&lt;/td&gt;
+          &lt;td class=&quot;context-item-value&quot;&gt;/false/&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;top-aligned-row context-row&quot;&gt;
+          &lt;td class=&quot;context-item-name&quot;&gt;NULL&lt;/td&gt;
+          &lt;td&gt;=&lt;/td&gt;
+          &lt;td class=&quot;context-item-value&quot;&gt;/null/&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;top-aligned-row context-row&quot;&gt;
+          &lt;td class=&quot;context-item-name&quot;&gt;IGNORE&lt;/td&gt;
+          &lt;td&gt;=&lt;/td&gt;
+          &lt;td class=&quot;context-item-value&quot;&gt;%r(       (?:         //[^\n\r]*[\n\r]| # line comments         /\*               # c-style comments           (?:             [^*/]|        # normal chars             /[^*]|        # slashes that do not start a nested comment             \*[^/]|       # asterisks that do not end this comment             /(?=\*/)      # single slash before this comment's end            )*         \*/               # the end of this comment         |\s+              # whitespaces       )+     )mx&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;top-aligned-row context-row&quot;&gt;
+          &lt;td class=&quot;context-item-name&quot;&gt;UNPARSED&lt;/td&gt;
+          &lt;td&gt;=&lt;/td&gt;
+          &lt;td class=&quot;context-item-value&quot;&gt;Object.new&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- if method_list --&gt;
+    &lt;div id=&quot;methods&quot;&gt;
+      &lt;h3 class=&quot;section-bar&quot;&gt;Public Instance methods&lt;/h3&gt;
+
+      &lt;div id=&quot;method-M000104&quot; class=&quot;method-detail&quot;&gt;
+        &lt;a name=&quot;M000104&quot;&gt;&lt;/a&gt;
+
+        &lt;div class=&quot;method-heading&quot;&gt;
+          &lt;a href=&quot;#M000104&quot; class=&quot;method-signature&quot;&gt;
+          &lt;span class=&quot;method-name&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;method-args&quot;&gt;()&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;method-description&quot;&gt;
+          &lt;p&gt;
+</pre>
+<p>
+Parses the current &lt;a href=&quot;../JSON.html&quot;&gt;JSON&lt;/a&gt;
+string and returns the complete data structure as a result. &lt;/p&gt;
+</p>
+<pre>
+          &lt;p&gt;&lt;a class=&quot;source-toggle&quot; href=&quot;#&quot;
+            onclick=&quot;toggleCode('M000104-source');return false;&quot;&gt;[Source]&lt;/a&gt;&lt;/p&gt;
+          &lt;div class=&quot;method-source-code&quot; id=&quot;M000104-source&quot;&gt;
+</pre>
+<p>
+&lt;pre&gt;
+</p>
+<pre>
+     &lt;span class=&quot;ruby-comment cmt&quot;&gt;# File lib/json.rb, line 249&lt;/span&gt;
+</pre>
+<p>
+249: &lt;span class=&quot;ruby-keyword kw&quot;&gt;def&lt;/span&gt;
+&lt;span class=&quot;ruby-identifier&quot;&gt;parse&lt;/span&gt; 250:
+&lt;span class=&quot;ruby-identifier&quot;&gt;reset&lt;/span&gt; 251:
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;until&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;eos?&lt;/span&gt; 252: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;case&lt;/span&gt; 253: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;scan&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;ARRAY_OPEN&lt;/span&gt;) 254: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;return&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;parse_array&lt;/span&gt; 255: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;scan&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;OBJECT_OPEN&lt;/span&gt;) 256: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;return&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;parse_object&lt;/span&gt; 257:
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;skip&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;IGNORE&lt;/span&gt;) 258: ; 259:
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; &lt;span
+class=&quot;ruby-operator&quot;&gt;!&lt;/span&gt;((&lt;span
+class=&quot;ruby-identifier&quot;&gt;value&lt;/span&gt; = &lt;span
+class=&quot;ruby-identifier&quot;&gt;parse_value&lt;/span&gt;).&lt;span
+class=&quot;ruby-identifier&quot;&gt;equal?&lt;/span&gt; &lt;span
+class=&quot;ruby-constant&quot;&gt;UNPARSED&lt;/span&gt;) 260: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;return&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;value&lt;/span&gt; 261: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;else&lt;/span&gt; 262: &lt;span
+class=&quot;ruby-identifier&quot;&gt;raise&lt;/span&gt; &lt;span
+class=&quot;ruby-constant&quot;&gt;ParserError&lt;/span&gt;, &lt;span
+class=&quot;ruby-node&quot;&gt;&amp;quot;source &#8217;#{peek(20)}&#8217;
+not in JSON!&amp;quot;&lt;/span&gt; 263: &lt;span class=&quot;ruby-keyword
+kw&quot;&gt;end&lt;/span&gt; 264: &lt;span class=&quot;ruby-keyword
+kw&quot;&gt;end&lt;/span&gt; 265: &lt;span class=&quot;ruby-keyword
+kw&quot;&gt;end&lt;/span&gt; &lt;/pre&gt;
+</p>
+<pre>
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;h3 class=&quot;section-bar&quot;&gt;Private Instance methods&lt;/h3&gt;
+
+      &lt;div id=&quot;method-M000107&quot; class=&quot;method-detail&quot;&gt;
+        &lt;a name=&quot;M000107&quot;&gt;&lt;/a&gt;
+
+        &lt;div class=&quot;method-heading&quot;&gt;
+          &lt;a href=&quot;#M000107&quot; class=&quot;method-signature&quot;&gt;
+          &lt;span class=&quot;method-name&quot;&gt;parse_array&lt;/span&gt;&lt;span class=&quot;method-args&quot;&gt;()&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;method-description&quot;&gt;
+          &lt;p&gt;&lt;a class=&quot;source-toggle&quot; href=&quot;#&quot;
+            onclick=&quot;toggleCode('M000107-source');return false;&quot;&gt;[Source]&lt;/a&gt;&lt;/p&gt;
+          &lt;div class=&quot;method-source-code&quot; id=&quot;M000107-source&quot;&gt;
+</pre>
+<p>
+&lt;pre&gt;
+</p>
+<pre>
+     &lt;span class=&quot;ruby-comment cmt&quot;&gt;# File lib/json.rb, line 320&lt;/span&gt;
+</pre>
+<p>
+320: &lt;span class=&quot;ruby-keyword kw&quot;&gt;def&lt;/span&gt;
+&lt;span class=&quot;ruby-identifier&quot;&gt;parse_array&lt;/span&gt; 321:
+&lt;span class=&quot;ruby-identifier&quot;&gt;result&lt;/span&gt; = [] 322:
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;until&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;eos?&lt;/span&gt; 323: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;case&lt;/span&gt; 324: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; (&lt;span
+class=&quot;ruby-identifier&quot;&gt;value&lt;/span&gt; = &lt;span
+class=&quot;ruby-identifier&quot;&gt;parse_value&lt;/span&gt;) &lt;span
+class=&quot;ruby-operator&quot;&gt;!=&lt;/span&gt; &lt;span
+class=&quot;ruby-constant&quot;&gt;UNPARSED&lt;/span&gt; 325: &lt;span
+class=&quot;ruby-identifier&quot;&gt;result&lt;/span&gt; &lt;span
+class=&quot;ruby-operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;value&lt;/span&gt; 326: &lt;span
+class=&quot;ruby-identifier&quot;&gt;skip&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;IGNORE&lt;/span&gt;) 327: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;unless&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;scan&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;COLLECTION_DELIMITER&lt;/span&gt;)
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;or&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;match?&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;ARRAY_CLOSE&lt;/span&gt;) 328: &lt;span
+class=&quot;ruby-identifier&quot;&gt;raise&lt;/span&gt; &lt;span
+class=&quot;ruby-constant&quot;&gt;ParserError&lt;/span&gt;, &lt;span
+class=&quot;ruby-node&quot;&gt;&amp;quot;expected &#8217;,&#8217; or
+&#8217;]&#8217; in array at
+&#8217;#{peek(20)}&#8217;!&amp;quot;&lt;/span&gt; 329: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; 330: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;scan&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;ARRAY_CLOSE&lt;/span&gt;) 331: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;break&lt;/span&gt; 332: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;skip&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;IGNORE&lt;/span&gt;) 333: ; 334:
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;else&lt;/span&gt; 335:
+&lt;span class=&quot;ruby-identifier&quot;&gt;raise&lt;/span&gt; &lt;span
+class=&quot;ruby-constant&quot;&gt;ParserError&lt;/span&gt;, &lt;span
+class=&quot;ruby-node&quot;&gt;&amp;quot;unexpected token in array at
+&#8217;#{peek(20)}&#8217;!&amp;quot;&lt;/span&gt; 336: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; 337: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; 338: &lt;span
+class=&quot;ruby-identifier&quot;&gt;result&lt;/span&gt; 339: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; &lt;/pre&gt;
+</p>
+<pre>
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div id=&quot;method-M000108&quot; class=&quot;method-detail&quot;&gt;
+        &lt;a name=&quot;M000108&quot;&gt;&lt;/a&gt;
+
+        &lt;div class=&quot;method-heading&quot;&gt;
+          &lt;a href=&quot;#M000108&quot; class=&quot;method-signature&quot;&gt;
+          &lt;span class=&quot;method-name&quot;&gt;parse_object&lt;/span&gt;&lt;span class=&quot;method-args&quot;&gt;()&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;method-description&quot;&gt;
+          &lt;p&gt;&lt;a class=&quot;source-toggle&quot; href=&quot;#&quot;
+            onclick=&quot;toggleCode('M000108-source');return false;&quot;&gt;[Source]&lt;/a&gt;&lt;/p&gt;
+          &lt;div class=&quot;method-source-code&quot; id=&quot;M000108-source&quot;&gt;
+</pre>
+<p>
+&lt;pre&gt;
+</p>
+<pre>
+     &lt;span class=&quot;ruby-comment cmt&quot;&gt;# File lib/json.rb, line 341&lt;/span&gt;
+</pre>
+<p>
+341: &lt;span class=&quot;ruby-keyword kw&quot;&gt;def&lt;/span&gt;
+&lt;span class=&quot;ruby-identifier&quot;&gt;parse_object&lt;/span&gt;
+342: &lt;span class=&quot;ruby-identifier&quot;&gt;result&lt;/span&gt; = {}
+343: &lt;span class=&quot;ruby-keyword kw&quot;&gt;until&lt;/span&gt;
+&lt;span class=&quot;ruby-identifier&quot;&gt;eos?&lt;/span&gt; 344:
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;case&lt;/span&gt; 345:
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; (&lt;span
+class=&quot;ruby-identifier&quot;&gt;string&lt;/span&gt; = &lt;span
+class=&quot;ruby-identifier&quot;&gt;parse_string&lt;/span&gt;) &lt;span
+class=&quot;ruby-operator&quot;&gt;!=&lt;/span&gt; &lt;span
+class=&quot;ruby-constant&quot;&gt;UNPARSED&lt;/span&gt; 346: &lt;span
+class=&quot;ruby-identifier&quot;&gt;skip&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;IGNORE&lt;/span&gt;) 347: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;unless&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;scan&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;PAIR_DELIMITER&lt;/span&gt;) 348:
+&lt;span class=&quot;ruby-identifier&quot;&gt;raise&lt;/span&gt; &lt;span
+class=&quot;ruby-constant&quot;&gt;ParserError&lt;/span&gt;, &lt;span
+class=&quot;ruby-node&quot;&gt;&amp;quot;expected &#8217;:&#8217; in object
+at &#8217;#{peek(20)}&#8217;!&amp;quot;&lt;/span&gt; 349: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; 350: &lt;span
+class=&quot;ruby-identifier&quot;&gt;skip&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;IGNORE&lt;/span&gt;) 351: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;unless&lt;/span&gt; (&lt;span
+class=&quot;ruby-identifier&quot;&gt;value&lt;/span&gt; = &lt;span
+class=&quot;ruby-identifier&quot;&gt;parse_value&lt;/span&gt;).&lt;span
+class=&quot;ruby-identifier&quot;&gt;equal?&lt;/span&gt; &lt;span
+class=&quot;ruby-constant&quot;&gt;UNPARSED&lt;/span&gt; 352: &lt;span
+class=&quot;ruby-identifier&quot;&gt;result&lt;/span&gt;[&lt;span
+class=&quot;ruby-identifier&quot;&gt;string&lt;/span&gt;] = &lt;span
+class=&quot;ruby-identifier&quot;&gt;value&lt;/span&gt; 353: &lt;span
+class=&quot;ruby-identifier&quot;&gt;skip&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;IGNORE&lt;/span&gt;) 354: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;unless&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;scan&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;COLLECTION_DELIMITER&lt;/span&gt;)
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;or&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;match?&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;OBJECT_CLOSE&lt;/span&gt;) 355: &lt;span
+class=&quot;ruby-identifier&quot;&gt;raise&lt;/span&gt; &lt;span
+class=&quot;ruby-constant&quot;&gt;ParserError&lt;/span&gt;, 356: &lt;span
+class=&quot;ruby-node&quot;&gt;&amp;quot;expected &#8217;,&#8217; or
+&#8217;}&#8217; in object at
+&#8217;#{peek(20)}&#8217;!&amp;quot;&lt;/span&gt; 357: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; 358: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;else&lt;/span&gt; 359: &lt;span
+class=&quot;ruby-identifier&quot;&gt;raise&lt;/span&gt; &lt;span
+class=&quot;ruby-constant&quot;&gt;ParserError&lt;/span&gt;, &lt;span
+class=&quot;ruby-node&quot;&gt;&amp;quot;expected value in object at
+&#8217;#{peek(20)}&#8217;!&amp;quot;&lt;/span&gt; 360: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; 361: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;scan&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;OBJECT_CLOSE&lt;/span&gt;) 362: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;if&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;klassname&lt;/span&gt; = &lt;span
+class=&quot;ruby-identifier&quot;&gt;result&lt;/span&gt;[&lt;span
+class=&quot;ruby-value str&quot;&gt;&#8217;json_class&#8217;&lt;/span&gt;]
+363: &lt;span class=&quot;ruby-identifier&quot;&gt;klass&lt;/span&gt; =
+&lt;span
+class=&quot;ruby-identifier&quot;&gt;klassname&lt;/span&gt;.&lt;span
+class=&quot;ruby-identifier&quot;&gt;sub&lt;/span&gt;(&lt;span
+class=&quot;ruby-regexp re&quot;&gt;/^:+/&lt;/span&gt;, &lt;span
+class=&quot;ruby-value str&quot;&gt;&#8217;&#8217;&lt;/span&gt;).&lt;span
+class=&quot;ruby-identifier&quot;&gt;split&lt;/span&gt;(&lt;span
+class=&quot;ruby-regexp re&quot;&gt;/::/&lt;/span&gt;).&lt;span
+class=&quot;ruby-identifier&quot;&gt;inject&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;Object&lt;/span&gt;) &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;do&lt;/span&gt; &lt;span
+class=&quot;ruby-operator&quot;&gt;|&lt;/span&gt;&lt;span
+class=&quot;ruby-identifier&quot;&gt;p&lt;/span&gt;,&lt;span
+class=&quot;ruby-identifier&quot;&gt;k&lt;/span&gt;&lt;span
+class=&quot;ruby-operator&quot;&gt;|&lt;/span&gt; 364: &lt;span
+class=&quot;ruby-identifier&quot;&gt;p&lt;/span&gt;.&lt;span
+class=&quot;ruby-identifier&quot;&gt;const_get&lt;/span&gt;(&lt;span
+class=&quot;ruby-identifier&quot;&gt;k&lt;/span&gt;) &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;rescue&lt;/span&gt; &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;nil&lt;/span&gt; 365: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; 366: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;break&lt;/span&gt; &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;unless&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;klass&lt;/span&gt; &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;and&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;klass&lt;/span&gt;.&lt;span
+class=&quot;ruby-identifier&quot;&gt;json_creatable?&lt;/span&gt; 367:
+&lt;span class=&quot;ruby-identifier&quot;&gt;result&lt;/span&gt; =
+&lt;span class=&quot;ruby-identifier&quot;&gt;klass&lt;/span&gt;.&lt;span
+class=&quot;ruby-identifier&quot;&gt;json_create&lt;/span&gt;(&lt;span
+class=&quot;ruby-identifier&quot;&gt;result&lt;/span&gt;) 368: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; 369: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;break&lt;/span&gt; 370: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;skip&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;IGNORE&lt;/span&gt;) 371: ; 372:
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;else&lt;/span&gt; 373:
+&lt;span class=&quot;ruby-identifier&quot;&gt;raise&lt;/span&gt; &lt;span
+class=&quot;ruby-constant&quot;&gt;ParserError&lt;/span&gt;, &lt;span
+class=&quot;ruby-node&quot;&gt;&amp;quot;unexpected token in object at
+&#8217;#{peek(20)}&#8217;!&amp;quot;&lt;/span&gt; 374: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; 375: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; 376: &lt;span
+class=&quot;ruby-identifier&quot;&gt;result&lt;/span&gt; 377: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; &lt;/pre&gt;
+</p>
+<pre>
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div id=&quot;method-M000105&quot; class=&quot;method-detail&quot;&gt;
+        &lt;a name=&quot;M000105&quot;&gt;&lt;/a&gt;
+
+        &lt;div class=&quot;method-heading&quot;&gt;
+          &lt;a href=&quot;#M000105&quot; class=&quot;method-signature&quot;&gt;
+          &lt;span class=&quot;method-name&quot;&gt;parse_string&lt;/span&gt;&lt;span class=&quot;method-args&quot;&gt;()&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;method-description&quot;&gt;
+          &lt;p&gt;&lt;a class=&quot;source-toggle&quot; href=&quot;#&quot;
+            onclick=&quot;toggleCode('M000105-source');return false;&quot;&gt;[Source]&lt;/a&gt;&lt;/p&gt;
+          &lt;div class=&quot;method-source-code&quot; id=&quot;M000105-source&quot;&gt;
+</pre>
+<p>
+&lt;pre&gt;
+</p>
+<pre>
+     &lt;span class=&quot;ruby-comment cmt&quot;&gt;# File lib/json.rb, line 269&lt;/span&gt;
+</pre>
+<p>
+269: &lt;span class=&quot;ruby-keyword kw&quot;&gt;def&lt;/span&gt;
+&lt;span class=&quot;ruby-identifier&quot;&gt;parse_string&lt;/span&gt;
+270: &lt;span class=&quot;ruby-keyword kw&quot;&gt;if&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;scan&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;STRING&lt;/span&gt;) 271: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;return&lt;/span&gt; &lt;span
+class=&quot;ruby-value str&quot;&gt;&#8217;&#8217;&lt;/span&gt; &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;if&lt;/span&gt; &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;self&lt;/span&gt;[&lt;span
+class=&quot;ruby-value&quot;&gt;1&lt;/span&gt;].&lt;span
+class=&quot;ruby-identifier&quot;&gt;empty?&lt;/span&gt; 272: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;self&lt;/span&gt;[&lt;span
+class=&quot;ruby-value&quot;&gt;1&lt;/span&gt;].&lt;span
+class=&quot;ruby-identifier&quot;&gt;gsub&lt;/span&gt;(&lt;span
+class=&quot;ruby-regexp
+re&quot;&gt;%r(\(?:[\bfnrt&amp;quot;/]|u([A-Fa-f\d]{4})))&lt;/span&gt;)
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;do&lt;/span&gt; 273: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;case&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;$~&lt;/span&gt;[&lt;span
+class=&quot;ruby-value&quot;&gt;0&lt;/span&gt;] 274: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; &lt;span
+class=&quot;ruby-value str&quot;&gt;&#8217;\\&#8217;&lt;/span&gt; &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;then&lt;/span&gt; &lt;span
+class=&quot;ruby-value str&quot;&gt;&#8217;\&#8217;&lt;/span&gt; 275:
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; &lt;span
+class=&quot;ruby-value str&quot;&gt;&#8217;\b&#8217;&lt;/span&gt; &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;then&lt;/span&gt; &lt;span
+class=&quot;ruby-value str&quot;&gt;&amp;quot;\b&amp;quot;&lt;/span&gt;
+276: &lt;span class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt;
+&lt;span class=&quot;ruby-value str&quot;&gt;&#8217;\f&#8217;&lt;/span&gt;
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;then&lt;/span&gt; &lt;span
+class=&quot;ruby-value str&quot;&gt;&amp;quot;\f&amp;quot;&lt;/span&gt;
+277: &lt;span class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt;
+&lt;span class=&quot;ruby-value str&quot;&gt;&#8217;\n&#8217;&lt;/span&gt;
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;then&lt;/span&gt; &lt;span
+class=&quot;ruby-value str&quot;&gt;&amp;quot;\n&amp;quot;&lt;/span&gt;
+278: &lt;span class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt;
+&lt;span class=&quot;ruby-value str&quot;&gt;&#8217;\r&#8217;&lt;/span&gt;
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;then&lt;/span&gt; &lt;span
+class=&quot;ruby-value str&quot;&gt;&amp;quot;\r&amp;quot;&lt;/span&gt;
+279: &lt;span class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt;
+&lt;span class=&quot;ruby-value str&quot;&gt;&#8217;\t&#8217;&lt;/span&gt;
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;then&lt;/span&gt; &lt;span
+class=&quot;ruby-value str&quot;&gt;&amp;quot;\t&amp;quot;&lt;/span&gt;
+280: &lt;span class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt;
+&lt;span class=&quot;ruby-value
+str&quot;&gt;&#8217;\&amp;quot;&#8217;&lt;/span&gt; &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;then&lt;/span&gt; &lt;span
+class=&quot;ruby-value str&quot;&gt;&#8217;&amp;quot;&#8217;&lt;/span&gt;
+281: &lt;span class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt;
+&lt;span class=&quot;ruby-value str&quot;&gt;&#8217;\/&#8217;&lt;/span&gt;
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;then&lt;/span&gt; &lt;span
+class=&quot;ruby-value str&quot;&gt;&#8217;/&#8217;&lt;/span&gt; 282:
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;else&lt;/span&gt; 283:
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;if&lt;/span&gt; &lt;span
+class=&quot;ruby-constant&quot;&gt;JSON&lt;/span&gt;.&lt;span
+class=&quot;ruby-identifier&quot;&gt;support_unicode?&lt;/span&gt; &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;and&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;$KCODE&lt;/span&gt; &lt;span
+class=&quot;ruby-operator&quot;&gt;==&lt;/span&gt; &lt;span
+class=&quot;ruby-value str&quot;&gt;&#8217;UTF8&#8217;&lt;/span&gt; 284:
+&lt;span class=&quot;ruby-constant&quot;&gt;JSON&lt;/span&gt;.&lt;span
+class=&quot;ruby-identifier&quot;&gt;utf16_to_utf8&lt;/span&gt;(&lt;span
+class=&quot;ruby-identifier&quot;&gt;$~&lt;/span&gt;[&lt;span
+class=&quot;ruby-value&quot;&gt;1&lt;/span&gt;]) 285: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;else&lt;/span&gt; 286: &lt;span
+class=&quot;ruby-comment cmt&quot;&gt;# if utf8 mode is switched off or
+unicode not supported, try to&lt;/span&gt; 287: &lt;span
+class=&quot;ruby-comment cmt&quot;&gt;# transform unicode \u-notation to
+bytes directly:&lt;/span&gt; 288: &lt;span
+class=&quot;ruby-identifier&quot;&gt;$~&lt;/span&gt;[&lt;span
+class=&quot;ruby-value&quot;&gt;1&lt;/span&gt;].&lt;span
+class=&quot;ruby-identifier&quot;&gt;to_i&lt;/span&gt;(&lt;span
+class=&quot;ruby-value&quot;&gt;16&lt;/span&gt;).&lt;span
+class=&quot;ruby-identifier&quot;&gt;chr&lt;/span&gt; 289: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; 290: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; 291: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; 292: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;else&lt;/span&gt; 293: &lt;span
+class=&quot;ruby-constant&quot;&gt;UNPARSED&lt;/span&gt; 294: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; 295: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; &lt;/pre&gt;
+</p>
+<pre>
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div id=&quot;method-M000106&quot; class=&quot;method-detail&quot;&gt;
+        &lt;a name=&quot;M000106&quot;&gt;&lt;/a&gt;
+
+        &lt;div class=&quot;method-heading&quot;&gt;
+          &lt;a href=&quot;#M000106&quot; class=&quot;method-signature&quot;&gt;
+          &lt;span class=&quot;method-name&quot;&gt;parse_value&lt;/span&gt;&lt;span class=&quot;method-args&quot;&gt;()&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;method-description&quot;&gt;
+          &lt;p&gt;&lt;a class=&quot;source-toggle&quot; href=&quot;#&quot;
+            onclick=&quot;toggleCode('M000106-source');return false;&quot;&gt;[Source]&lt;/a&gt;&lt;/p&gt;
+          &lt;div class=&quot;method-source-code&quot; id=&quot;M000106-source&quot;&gt;
+</pre>
+<p>
+&lt;pre&gt;
+</p>
+<pre>
+     &lt;span class=&quot;ruby-comment cmt&quot;&gt;# File lib/json.rb, line 297&lt;/span&gt;
+</pre>
+<p>
+297: &lt;span class=&quot;ruby-keyword kw&quot;&gt;def&lt;/span&gt;
+&lt;span class=&quot;ruby-identifier&quot;&gt;parse_value&lt;/span&gt; 298:
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;case&lt;/span&gt; 299:
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;scan&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;FLOAT&lt;/span&gt;) 300: &lt;span
+class=&quot;ruby-constant&quot;&gt;Float&lt;/span&gt;(&lt;span
+class=&quot;ruby-keyword kw&quot;&gt;self&lt;/span&gt;[&lt;span
+class=&quot;ruby-value&quot;&gt;0&lt;/span&gt;]) 301: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;scan&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;INTEGER&lt;/span&gt;) 302: &lt;span
+class=&quot;ruby-constant&quot;&gt;Integer&lt;/span&gt;(&lt;span
+class=&quot;ruby-keyword kw&quot;&gt;self&lt;/span&gt;[&lt;span
+class=&quot;ruby-value&quot;&gt;0&lt;/span&gt;]) 303: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;scan&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;TRUE&lt;/span&gt;) 304: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;true&lt;/span&gt; 305: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;scan&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;FALSE&lt;/span&gt;) 306: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;false&lt;/span&gt; 307: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;scan&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;NULL&lt;/span&gt;) 308: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;nil&lt;/span&gt; 309: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; (&lt;span
+class=&quot;ruby-identifier&quot;&gt;string&lt;/span&gt; = &lt;span
+class=&quot;ruby-identifier&quot;&gt;parse_string&lt;/span&gt;) &lt;span
+class=&quot;ruby-operator&quot;&gt;!=&lt;/span&gt; &lt;span
+class=&quot;ruby-constant&quot;&gt;UNPARSED&lt;/span&gt; 310: &lt;span
+class=&quot;ruby-identifier&quot;&gt;string&lt;/span&gt; 311: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;scan&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;ARRAY_OPEN&lt;/span&gt;) 312: &lt;span
+class=&quot;ruby-identifier&quot;&gt;parse_array&lt;/span&gt; 313: &lt;span
+class=&quot;ruby-keyword kw&quot;&gt;when&lt;/span&gt; &lt;span
+class=&quot;ruby-identifier&quot;&gt;scan&lt;/span&gt;(&lt;span
+class=&quot;ruby-constant&quot;&gt;OBJECT_OPEN&lt;/span&gt;) 314: &lt;span
+class=&quot;ruby-identifier&quot;&gt;parse_object&lt;/span&gt; 315:
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;else&lt;/span&gt; 316:
+&lt;span class=&quot;ruby-constant&quot;&gt;UNPARSED&lt;/span&gt; 317:
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; 318:
+&lt;span class=&quot;ruby-keyword kw&quot;&gt;end&lt;/span&gt; &lt;/pre&gt;
+</p>
+<pre>
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+</pre>
+<p>
+&lt;div id=&quot;validator-badges&quot;&gt;
+</p>
+<pre>
+  &lt;p&gt;&lt;small&gt;&lt;a href=&quot;http://validator.w3.org/check/referer&quot;&gt;[Validate]&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+</pre>
+<p>
+&lt;/div&gt;
+</p>
+<p>
+&lt;/body&gt; &lt;/html&gt;
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
